@@ -99,4 +99,6 @@ Random Forest
 These parameters where fitted in our model to see if they will perform better than they did earlier. After Fitting the model with tuned parameters, The logistic regression model did not perform better with the tuned parameters compared with our initial model.
 In conclusion, the minimum monthly charge is 18.25 whiles the maximum monthly charge is 118.75. 26.5% of customers churned whiles 73.5% stayed. Out of the 1869 customers who churned, 939 where female whiles 930 where male. 16.2% are senior citizens. From the analysis, customers on the Month-to-month contract churned more, followed by those on one year and then two year contracts. There is therefore a direct relationship between contract longevity and customers not churning.  1,446 of those who churned did not receive technical support whiles 310 received technical support.
 All the models we tested performed better on the imbalanced data than the balanced data. generally, all our models performed fairly well with F1 scores of 80% or above. However, the Logistic Regression Model performs better than the rest of the models.
+
+
 A notebook containing the detailed codes, explanations and visualization can be found here on my GitHub page
