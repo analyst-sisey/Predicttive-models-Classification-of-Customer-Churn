@@ -4,6 +4,7 @@ Customer attrition is one of the biggest expenditures of any organization. Custo
 Customer attrition also known as customer churn is the rate at which customers stop using an organization’s product or service.
 Organizations spends a lot of resources-time and money- in acquiring customers. Knowing customers possibility of churning helps organizations put in place effective strategies for retention.
 The goal of this project is to build a classification model that predicts the likelihood of customer churn. This article will explore the processes of accomplishing this goal using the CRISP-DM methodology. 
+
 •	Perform EDA
 •	Answer some questions
 •	Test some hypothesis
@@ -24,7 +25,9 @@ We will be answering the following questions and hypothesis.
 8. What is the distribution of customers by Payment Method
 9. Is there a correlation between charges and churn
 
+
 Data Exploration 
+
 Exploration of the dataset revealed the dataset is made up of both categorical and numerical columns. The target column "Churn" is numeric with binary classes 0 and 1. The dataset can be summarized as containing the following data:
 Demographic data: Gender, SeniorCitizen, Partner, and Dependents
 Subscribed services: PhoneService, MultipleLine, InternetService, OnlineSecurity, OnlineBackup, DeviceProtection, TechSupport, StreamingTV, and  StreamingMovies
@@ -59,16 +62,21 @@ Of those who churned, 1,446 did not receive technical support whiles 310 receive
  
 
 Feature Engineering
+
 Encoding Categorical Columns
+
 Models perform better with numeric values. Hence, we encoded the categorical columns using sklearn's OneHotEncoder function as we dont have ordinal columns. We also changed "Yes" and "No" in the Churn column to 0 and 1 respectively.
 Since we are predicting customer churn, we used the churn column as our target variables and use the rest of the columns as our predictor variables.  Again, our predictive variables (Churn) contains imbalance data. There are 5174 entries for Yes and 1869 entries for No. This has automatically created minority and majority classes which can create problems with the accuracy of our model due to this bias. We upsampled the minority class using sklearn resample().
 In order to adjust our features to a common scale, we performed feature scaling on our predictive variables. We  used the MinMaxScaler to perform feature scaling.
+
 Modeling and Prediction
+
 We built the following models and compared their accuracy, precision, recall and F1 & F2 scores:
 1. LogisticRegression Model
 2. DecisionTree Model
 3. RandomForest Model
 4. XGB Classifier Model
+
 Model	Accuracy	Precision	Recall	F1	F2
 0	LogisticRegression	0.821859	0.861086	0.903475	0.881771	0.869242
 1	DecisionTreeClassifier	0.710433	0.804854	0.800193	0.802517	0.803918
